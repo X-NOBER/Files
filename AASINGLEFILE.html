@@ -186,8 +186,28 @@
     </a>
     <h2 style="color: white; text-align: center; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); font-weight: normal; font-size: 18px;">
         <input type="text" placeholder="Search..." id="searchInput" style="padding: 13px; width: 100%; max-width: 420px; border-radius: 8px; border: none; box-shadow: 0 2px 4px rgba(7, 105, 218, 0.1);">
+        <script>
+            document.getElementById('searchInput').addEventListener('input', function () {
+  const query = this.value.toLowerCase().trim();
+  const sections = document.querySelectorAll('.letter-section');
+
+  sections.forEach(section => {
+    const buttons = section.querySelectorAll('input[type="button"]');
+    let anyVisible = false;
+
+    buttons.forEach(btn => {
+      const label = btn.value.toLowerCase();
+      const matches = query === '' || label.includes(query);
+      btn.style.display = matches ? '' : 'none';
+      if (matches) anyVisible = true;
+    });
+    section.style.display = anyVisible ? '' : 'none';
+  });
+});
+        </script>
         <script src="https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile@main/searchbut.js"></script>
     <button id="lolbutton" onclick="const script = document.createElement('script');script.src = 'https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile@latest/games.js';document.body.appendChild(script);">Click to load if it isnt loading</button>
+    <button style="background: rgb(89, 134, 218); border: none; padding: 15px 30px; font-size: 16px; font-weight: 500; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s ease; width: 100%; max-width: 600px; color: white; text-align: center; margin-top: 10px;" onclick="const script = document.createElement('script');script.src = 'https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile@latest/codeorn.js';document.body.appendChild(script);">Load Alternative (codeorn)</button>
     </h2>
 
         
@@ -195,5 +215,6 @@
         </div>
     </div>
     <script src="games.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile@latest/offline.js"></script>
    </body>
    </html>
