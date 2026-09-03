@@ -217,7 +217,9 @@
         }
 
         input[type="button"] {
-            background: linear-gradient(135deg, rgb(89, 134, 218) 0%, rgba(121, 170, 219, 0.8) 100%);
+            background: url('sparkle.png') center/contain no-repeat, linear-gradient(135deg, rgb(89, 134, 218) 0%, rgba(121, 170, 219, 0.8) 100%);
+            background-size: 60%, 100%;
+            background-position: center, center;
             border: none;
             padding: 10px 12px;
             font-size: 13px;
@@ -233,6 +235,7 @@
             text-overflow: ellipsis;
             position: relative;
             overflow: visible;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
 
         input[type="button"]::before {
@@ -275,9 +278,12 @@
 
         input[type="button"]:hover {
             transform: scale(1.12) translateY(-3px);
-            box-shadow: 0 0 25px rgba(121, 170, 219, 0.6), 0 0 15px rgba(255,255,255,0.4), 0 4px 8px rgba(0,0,0,0.3);
-            background: linear-gradient(135deg, #79aadb 0%, rgb(121, 170, 219) 100%);
-            text-shadow: 0 0 10px rgba(255,255,255,0.4);
+            box-shadow: 0 0 30px rgba(121, 170, 219, 0.8), 0 0 20px rgba(255,255,255,0.5), 0 4px 8px rgba(0,0,0,0.3);
+            background: url('sparkle.png') center/70%, linear-gradient(135deg, #79aadb 0%, rgb(121, 170, 219) 100%);
+            background-size: 70%, 100%;
+            background-position: center, center;
+            text-shadow: 0 0 15px rgba(255,255,255,0.6);
+            filter: brightness(1.15);
         }
 
         input[type="button"]:active {
