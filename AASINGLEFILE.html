@@ -23,23 +23,20 @@
         }
 
         .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
+            position: relative;
             width: 80px;
-            height: 100vh;
+            height: auto;
+            min-height: 100vh;
             background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             padding: 20px 10px;
             display: flex;
             flex-direction: column;
             gap: 8px;
-            overflow-y: scroll;
+            overflow-y: visible;
             overflow-x: hidden;
             box-shadow: 2px 0 10px rgba(0,0,0,0.3);
             z-index: 1000;
-            will-change: transform;
-            contain: layout style paint;
         }
 
         .sidebar::-webkit-scrollbar {
@@ -93,7 +90,7 @@
         }
 
         .main-content {
-            margin-left: 100px;
+            margin-left: 0;
             flex: 1;
             padding: 15px;
             overflow-y: auto;
@@ -255,7 +252,7 @@
                 transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             }
             .main-content {
-                margin-left: 70px;
+                margin-left: 0;
             }
             .buttons-container {
                 grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
